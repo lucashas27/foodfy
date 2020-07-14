@@ -1,0 +1,57 @@
+    
+    
+    
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas</title>
+    <link rel="stylesheet" href="/index.css">
+
+    </head>
+    <body>
+
+        <header>
+
+            <div class="headers">
+                <img src="assets\logo.png" alt="">
+                <a href="/">Inicio</a>
+                <a href="/sobre">Sobre</a>
+                <a href="/receitas"><b>Receitas</b></a>
+                <a href="">Envie sua receita</a>
+
+            </div>
+        </header>
+
+
+
+<section class="cards">
+
+  {% for item in items %}
+<div class="card" id="{{items.indexOf(item)}}">
+  
+     <div class="cards__image-container">
+        <img src="{{item.image}}" alt="Imagem de {{item.title}}">
+     </div>
+
+        <div class="card__content">
+    <p> {{item.title}} </p>
+        </div>
+
+        <div class="card__info" id={{item.id}}>
+    <p> {{item.author}} </p>
+        </div>
+</div>
+{%endfor%} 
+
+    <div class="footer">
+        <footer>
+    <p> Todos direitos reservados, receitas Foodfy. </p>
+        </footer>
+    </div>
+
+<script src="scripts.js"></script>
+
+    </body>
+    </html>
